@@ -3,9 +3,14 @@ import { Switch, Route } from "react-router-dom";
 import { softPink, softBlue } from './ui-kit'
 import { MainCanvas } from './components/MainCanvas'
 import { IRouteProps } from './types';
-import { Login, ListOfProjects } from './views'
-
+import { Login, ListOfProjects, Home } from './views'
+  
 export const appRoutes = [
+    {
+        label: 'Home',
+        path: '/',
+        exact: true,
+    },
     {
         label: 'my projects',
         path: '/my-projects',
@@ -30,6 +35,7 @@ interface IAppRouterProps {
 export const AppRouter: React.FunctionComponent<IAppRouterProps> = ({ setColor }) => {
 
     const componentMap: any = {
+        '/': () => <Home changeColor={() => setColor('#eee')}/>,
         '/login' : () => <Login changeColor={() => setColor(softPink)}/>,
         '/project' : () => <MainCanvas changeColor={() => setColor('#eee')}/>,
         '/my-projects' : () => <ListOfProjects changeColor={() => setColor(softBlue)}/>

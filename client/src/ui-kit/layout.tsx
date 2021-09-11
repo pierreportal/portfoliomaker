@@ -54,8 +54,17 @@ export const MainContainer = styled.div`
     }
 `;
 
+interface IFullPageCenterContentProps {
+    centerHorizontally?: boolean
+    centerVertically?: boolean
+}
+
 export const FullPageCenterContent = styled(Column)`
-    justify-content: center;
-    align-items: center;
-    flex: 1
+    justify-content: ${(props:IFullPageCenterContentProps) => props.centerHorizontally ? 'center' : 'none'};
+    align-items: ${(props:IFullPageCenterContentProps) => props.centerVertically ? 'center' : 'none'};
+    flex: 1;
+    width:100%;
+    color: ${fontBlack};
+    padding: 10px 40px;
+    overflow-y: scroll
 `;

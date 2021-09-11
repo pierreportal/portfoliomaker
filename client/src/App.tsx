@@ -3,17 +3,26 @@ import { StateManager } from './stateManager';
 import { MainHeader } from './components/MainHeader';
 import { AppContainer } from './ui-kit'
 import { AppRouter } from './AppRouter'
-import { MainContext } from './stateManager';
+import { useQuery, gql} from '@apollo/client';
 
 export const App: React.FunctionComponent = () => {
 
-  // const {fullBackgroundColor} = React.useContext(MainContext);
   const [fullBackgroundColor, setFullBackgroundColor] = React.useState<string>("#eee");
 
-  const setColor = (color: string) => setFullBackgroundColor(color)
+  const EXCHANGE_RATES = gql`
+  query GetExchangeRates {
+    users {
+      username
+    }
+  }
+`;
 
-  console.log('fullBackgroundColor:', fullBackgroundColor)
-  // const [fullBackgroundColor, setFullBackgroundColor] = React.useState<string>("#eee");
+  const { loading, error, data } = useQuery(EXCHANGE_RATES);
+
+  console.log(data)
+
+
+  const setColor = (color: string) => setFullBackgroundColor(color)
 
   return (
     <StateManager>

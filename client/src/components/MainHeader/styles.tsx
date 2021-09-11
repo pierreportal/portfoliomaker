@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { Row, fontBlack, deepBlue } from '../../ui-kit';
 // #333e90
 export const MainAppHeader = styled(Row)`
-    // background-color: ${deepBlue};
     justify-content: space-between;
-    color: white;
+    color: ${deepBlue};
     width: 100%;
-    height: 35px;
+    height: 55px;
     align-items: center;
     padding: 10px;
+    // box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.3);
     &>div {
         align-items: center;
     }

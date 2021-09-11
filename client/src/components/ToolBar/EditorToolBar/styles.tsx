@@ -5,9 +5,9 @@ export const EditorToolBarColumn = styled(Column)`
     position: absolute;
     left: 0;
     display: flex;
-    height: calc(100% - 75px);
+    height: calc(100% - 95px);
     background-color: #ddd;
-    top: 75px;
+    top: 95px;
     width: 45px;
     padding: 10px
 `;

@@ -22,3 +22,16 @@ export const MainAppNavLink = styled(NavLink)`
         border-bottom: solid 2px white
     }
 `;
+
+export const InlineLInk = styled.a`
+    cursor: pointer;
+    color: #485dff;
+    font-weight: 500;
+    padding: 5px 0;
+    border-bottom: solid 1px #485dff;
+    transition: all 200ms ease;
+    &:hover {
+        color: ${fontBlack};
+        border-bottom: solid 1px ${fontBlack};
+    }
+`;

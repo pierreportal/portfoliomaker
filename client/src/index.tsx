@@ -4,13 +4,28 @@ import './index.css';
 import { App } from './App';
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+} from "@apollo/client";
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
+
+const httpLink = new HttpLink({ uri: 'http://localhost:5555/graphql' })
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache()
+});
 
 const reactApp = (
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
     </BrowserRouter>
   </React.StrictMode>
 )
