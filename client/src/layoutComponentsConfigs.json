@@ -1,0 +1,23 @@
+{
+    "layoutCmponents": [
+        {
+            "type": "text",
+            "templates": [
+                {
+                    "name":"paragraph"
+                },
+                {
+                    "name":"columns"
+                }
+            ]
+        },
+        {
+            "type": "heading",
+            "templates": [
+                {
+                    "name":"heading"
+                }
+            ]
+        }
+    ]
+}

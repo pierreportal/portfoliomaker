@@ -1,0 +1,85 @@
+{
+    "routes": [
+        {
+            "label": "Home",
+            "path": "/"
+        },
+        {
+            "label": "About",
+            "path": "/about"
+        }
+    ],
+    "gridConfig": {
+        "width": 1000,
+        "rowHeight": 50,
+        "cols": 12,
+        "isDraggable": true
+    },
+    "mainCustomStyles": {
+        "backgroundColor": "#ffa9a9"
+    },
+    "mainLayoutComponents": [
+        {
+            "id": "asdfg",
+            "componentType": "navigation",
+            "layoutSettings": { "x": 0, "y": 0, "w": 3, "h": 2},
+            "customStyles": {}
+        },
+        {
+            "id": "uio",
+            "componentType": "mainTitle",
+            "layoutSettings": { "x": 0, "y": 0, "w": 3, "h": 2},
+            "content":"Pierre Portal",
+            "customStyles": {}
+        }
+    ],
+    "layouts": [
+        {
+            "id": "layouthome",
+            "path": "/",
+            "layoutComponents": [
+                {
+                    "id": "sadxzuioj",
+                    "componentType": "heading",
+                    "layoutSettings": { "x": 0, "y": 0, "w": 3, "h": 2},
+                    "content": "This is heading",
+                    "customStyles": {}
+                },
+                {
+                    "id": "saduioj",
+                    "componentType": "text",
+                    "layoutSettings": { "x": 3, "y": 0, "w": 3, "h": 2},
+                    "content": "This is content of HOME 1",
+                    "customStyles": {}
+                },
+                {
+                    "id": "czdsf",
+                    "componentType": "text",
+                    "layoutSettings": { "x": 0, "y": 2, "w": 7, "h": 3},
+                    "content": "This is content of HOME 2",
+                    "customStyles": {}
+                },
+                {
+                    "id": "czdsfdfgf",
+                    "componentType": "galery",
+                    "layoutSettings": { "x": 0, "y": 2, "w": 12, "h": 10},
+                    "feed": null,
+                    "customStyles": {}
+                }
+            ]
+        },
+        {
+            "id": "layoutabout",
+            "path": "/about",
+            "layoutComponents": [
+                {
+                    "id": "lkcxv",
+                    "componentType": "text",
+                    "layoutSettings": { "x": 0, "y": 0, "w": 3, "h": 2},
+                    "content": "This is content of ABOUT 1",
+                    "customStyles": {}
+                }
+            ]
+        }
+    ]
+}
