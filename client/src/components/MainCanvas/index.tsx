@@ -4,12 +4,12 @@ import { EditorManager } from '../../editorManager';
 import { MainContainer } from '../../ui-kit'
 
 interface IMainCanvasProps {
-    setColor: (color: string) => void
+    changeColor: () => void
 }
 
-export const MainCanvas: React.FunctionComponent<IMainCanvasProps> = ({ setColor }) => {
+export const MainCanvas: React.FunctionComponent<IMainCanvasProps> = ({ changeColor }) => {
 
-    React.useEffect(() => setColor('#eee'), []);
+    React.useEffect(() => changeColor(), []);
 
     return <EditorManager>
     <MainContainer backgroundColor={'pink'}>

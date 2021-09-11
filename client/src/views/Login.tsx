@@ -1,15 +1,19 @@
 import React from 'react';
-import {softPink} from '../ui-kit'
+import { FullPageCenterContent } from '../ui-kit'
+import { SimpleButton } from '../components/ActionUI/Buttons'
 
 interface ILoginProps {
-    setColor: (color: string) => void;
+    changeColor: () => void;
 }
 
-export const Login: React.FunctionComponent<ILoginProps> = ({ setColor }) => {
+export const Login: React.FunctionComponent<ILoginProps> = ({ changeColor }) => {
 
     React.useEffect(() => {
-        setColor(softPink)
+        changeColor()
     }, []);
 
-    return <>Login</>;
+    return <FullPageCenterContent margin={10}>
+        <h2>Welcome home</h2>
+        <SimpleButton label={'login'} onClickCallback={() => false}/>
+    </FullPageCenterContent>;
 }

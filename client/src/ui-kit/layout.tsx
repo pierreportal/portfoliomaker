@@ -31,15 +31,7 @@ interface IAppContainerProps {
 
 export const AppContainer = styled(Column)`
     background-color: ${(props:IAppContainerProps) => props.backgroundColor || '#eee'};
-    // background: repeating-linear-gradient(
-    //     -45deg,
-    //     ${ghostBlack},
-    //     ${ghostBlack} 5px,
-    //     ${fontBlack} 3px,
-    //     ${fontBlack} 10px
-    //   );
     transition: background-color 200ms linear;
-
     width: 100vw;
     height: 100vh;
 `;
@@ -60,4 +52,10 @@ export const MainContainer = styled.div`
         background-color: ${(props:IMainCOntainerProps) => props.backgroundColor || 'white'};
         transition: none
     }
+`;
+
+export const FullPageCenterContent = styled(Column)`
+    justify-content: center;
+    align-items: center;
+    flex: 1
 `;
