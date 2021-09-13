@@ -16,6 +16,7 @@ const slideLeft = keyframes`
 `;
 
 export const Tip = styled(Row)`
+    font-weight: 500;
     position: absolute;
     background-color: #ffc1c1;
     color: #37345a;

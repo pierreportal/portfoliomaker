@@ -1,4 +1,6 @@
 export interface IContext {
+    onlineUser: IUser | null,
+    setOnlineUser: (user: IUser) => void;
     darkMode: boolean;
     setDarkMode: (mode: boolean) => void;
     selectedLayoutComponent: any[],
@@ -15,12 +17,23 @@ export interface IContext {
     setUserLayout: (layout: any[]) => void,
     userRoutes: IRouteProps[],
     setUserRoutes: (routes:IRouteProps[]) => void,
+    currentView: string,
+    setCurrentView: (currentView:string) => void,
+
+}
+
+export interface IUser {
+    id: string;
+    username?: string;
+    email: string;
+    password?: string
 }
 
 export interface IRouteProps {
     label?: string,
     path: string,
     exact?: boolean,
+    private?: boolean,
     component?: () => JSX.Element
 }
 

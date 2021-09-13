@@ -7,9 +7,10 @@ interface ISimpleButonProps {
     type?: any,
     large?: boolean,
     backgroundColor?: string,
+    color?: string,
     onClickCallback: () => void
 }
 
-export const SimpleButton:React.FunctionComponent<ISimpleButonProps> = ({ label, type, large, backgroundColor, onClickCallback }) => {
-    return <TouchButton backgroundColor={backgroundColor} large type={type} onClick={onClickCallback}>{ label.toLowerCase() }</TouchButton>
+export const SimpleButton:React.FunctionComponent<ISimpleButonProps> = ({ label, type, large, backgroundColor, color, onClickCallback }) => {
+    return <TouchButton backgroundColor={backgroundColor} color={color} large={large} type={type} onClick={onClickCallback}>{ label.toLowerCase() }</TouchButton>
 }

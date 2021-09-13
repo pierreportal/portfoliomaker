@@ -9,15 +9,16 @@ export const App: React.FunctionComponent = () => {
 
   const [fullBackgroundColor, setFullBackgroundColor] = React.useState<string>("#eee");
 
-  const EXCHANGE_RATES = gql`
-  query GetExchangeRates {
-    users {
-      username
-    }
-  }
-`;
+  const CHECK_LOGGED_IN_QUERY = gql`
+    query loggedIn {
+        loggedIn {
+            username
+            email
+            id
+        }
+    }`;
 
-  const { loading, error, data } = useQuery(EXCHANGE_RATES);
+  const { data } = useQuery(CHECK_LOGGED_IN_QUERY);
 
   console.log(data)
 
@@ -25,7 +26,7 @@ export const App: React.FunctionComponent = () => {
   const setColor = (color: string) => setFullBackgroundColor(color)
 
   return (
-    <StateManager>
+    <StateManager loggedInUser={data}>
         <AppContainer backgroundColor={fullBackgroundColor} horizontalAlign={'center'}>
             <MainHeader/>
             <AppRouter setColor={setColor}/>

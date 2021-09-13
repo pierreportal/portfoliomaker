@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import RGL, { WidthProvider } from 'react-grid-layout';
-import { ghostBlack, fontBlack } from '../../../ui-kit'
+import { fontBlack } from '../../../ui-kit'
 
 interface IGridLayoutProps {
     width: number | null,
@@ -9,17 +9,16 @@ interface IGridLayoutProps {
 export const GridLayout = styled(WidthProvider(RGL))`
     margin-right: auto;
     margin-left: auto;
-    min-height: calc(100vh - 105px);
+    min-height: calc(100vh - 100px);
     width: ${(props: IGridLayoutProps) => props.width ? props.width + 'px' : 'auto'};
+    background: transparent;
+    transition: all 400ms ease;
     
     &:hover {
-        background: repeating-linear-gradient(
-            -45deg,
-            transparent,
-            transparent 5px,
-            ${ghostBlack} 3px,
-            ${ghostBlack} 10px
-          );
+        background-image: radial-gradient(${fontBlack} 1px, transparent 1px);
+        background-position: 0 0;
+        background-size: 50px 50px;
+        height: 200px;
     }
     .react-grid-item.react-grid-placeholder {
         border: dashed 2px ${fontBlack};
@@ -27,8 +26,6 @@ export const GridLayout = styled(WidthProvider(RGL))`
         opacity: 1;
     }
 `;
-
-
 
 export const LayoutComponentStyle = styled.div`
     background-color: #fff;

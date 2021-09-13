@@ -18,10 +18,14 @@ export const BgSwitchButtonStyled = styled.div`
 `;
 
 export const BgSwitchButtonItem = styled.div`
-    background-color: ${(props: IBgSwitchButtonItemProps) => props.selected ? 'grey' : 'none'};
+    background-color: ${(props: IBgSwitchButtonItemProps) => props.selected ? '#000' : 'none'};
     color: ${(props: IBgSwitchButtonItemProps) => props.selected ? '#eee' : 'grey'};
     transition: background-color 200ms ease, color 200ms ease;
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
 `;

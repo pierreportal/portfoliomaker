@@ -3,6 +3,7 @@ import { gql } from "apollo-server-express";
 export const typeDefs = gql`
 
   scalar Date
+  scalar Object
 
   type User {
     id: ID,
@@ -32,6 +33,8 @@ export const typeDefs = gql`
   }
 
   type Query {
+    loggedIn: User
+    logout: Boolean
     users: [User]
     user(userId: String!): User!
     projects(ownerId: ID!): [Project!]!
@@ -42,6 +45,6 @@ export const typeDefs = gql`
   type Mutation {
     createUser(email: String!, password: String!): User!
     loginUser(email: String!, password: String!): User
-    createProject(ownerId: ID!, title: String!): Project!
+    createProject(ownerId: ID!): Project!
   }
 `;

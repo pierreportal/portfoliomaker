@@ -1,6 +1,4 @@
-export { Page } from './Page';
+export { ProjectBuilder } from './ProjectBuilder';
 export { Login } from './Login';
 export { Home } from './Home';
-export { ListOfProjects } from './ListOfProjects';
-
-
+export { MyProjects } from './MyProjects';

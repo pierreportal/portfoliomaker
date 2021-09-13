@@ -33,9 +33,9 @@ export const TouchButton = styled.button`
     cursor: pointer;
     background-color: ${(props:ITouchButtonStypeProps) => props.backgroundColor? props.backgroundColor : props.type ? mapTypeToColor(props.type).bgColor :'transparent'};;
     border: solid 1px ${(props:ITouchButtonStypeProps) => props.backgroundColor? props.backgroundColor : props.type ? mapTypeToColor(props.type).borderColor : props.color || 'black'};
-    color: ${(props:ITouchButtonStypeProps) => props.type ? mapTypeToColor(props.type).textColor : props.color || 'black'};
+    color: ${(props:ITouchButtonStypeProps) => props.color ? props.color : props.type ? mapTypeToColor(props.type).textColor : props.color || 'black'};
     padding: ${(props:ITouchButtonStypeProps) => props.large ? '10px' : '5px'};
-    border-radius: 7px;
+    border-radius:  ${(props:ITouchButtonStypeProps) => props.large ? '7px' : '4px'};;
     min-width: 27px;
     width: fit-content;
     transition: all 200ms ease;

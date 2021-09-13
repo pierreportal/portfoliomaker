@@ -1,5 +1,5 @@
 import React, { FunctionComponent, createContext } from 'react';
-import { IContext, IToastNotification, ITip, IGrid, IRouteProps } from '../types';
+import { IContext, IToastNotification, ITip, IGrid, IRouteProps, IUser } from '../types';
 import data from '../fakeData.json';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -11,6 +11,8 @@ const {
 } = data as any;
 
 export const MainContext = createContext<IContext>({
+  onlineUser: null,
+  setOnlineUser: () => {/* set in provider */},
   darkMode: false,
   setDarkMode: () => {/* set in provider */},
   selectedLayoutComponent: [],
@@ -27,13 +29,22 @@ export const MainContext = createContext<IContext>({
   setUserLayout: () => {/* set in provider */},
   userRoutes: [],
   setUserRoutes: () => {/* set in provider */},
+  currentView: '',
+  setCurrentView: () => {/* set in provider */},
 });
 
 interface IStateManagerProps {
-    children: React.ReactNode
+    children: React.ReactNode,
+    loggedInUser: IUser | null
 }
 
-export const StateManager: FunctionComponent<IStateManagerProps> = ({ children }) => {
+export const StateManager: FunctionComponent<IStateManagerProps> = ({ children, loggedInUser }) => {
+
+  
+  // const [onlineUser, setOnlineUser] = React.useState<IUser | null>(loggedInUser)
+  const [onlineUser, setOnlineUser] = React.useState<IUser | null>({id:"613e289443e397d045497229", username:"Pipo", email:"pierreportal.mac@gmail.com", password:"sdfs"})
+  // React.useEffect(() => console.log(onlineUser), [onlineUser]);
+
 
   const [darkMode, setDarkMode] = React.useState<boolean>(false);
   const [selectedLayoutComponent, setSelectedLayoutComponent] = React.useState<any[]>([]);
@@ -44,7 +55,10 @@ export const StateManager: FunctionComponent<IStateManagerProps> = ({ children }
   const [userMainLayout, setUserMainLayout] = React.useState<any[]>(mainLayoutComponents);
   const [userLayout, setUserLayout] = React.useState<any[]>(layouts);
 
-  const [userRoutes, setUserRoutes] = React.useState<IRouteProps[]>(routes)
+  const [userRoutes, setUserRoutes] = React.useState<IRouteProps[]>(routes);
+
+  const [currentView, setCurrentView] = React.useState<string>('home');
+
 
 
   const contextProviderValue: IContext = {
@@ -63,7 +77,11 @@ export const StateManager: FunctionComponent<IStateManagerProps> = ({ children }
     userLayout,
     setUserLayout,
     userRoutes,
-    setUserRoutes
+    setUserRoutes,
+    currentView,
+    setCurrentView,
+    onlineUser,
+    setOnlineUser
   };
   
   return <MainContext.Provider value={ contextProviderValue }>{ children }</MainContext.Provider>;

@@ -7,16 +7,24 @@ export const userMutations = {
         await user.save();
         return user
     },
-    loginUser: async (_, { password, email }) => {
+    loginUser: async (_, { password, email }, { req }) => {
         const user = await User.findOne({email, password}).then(res => res).catch(err => err);
-        return user
-    }
+        // if (user) {
+            req.session.user = user;
+            req.session.save(() => {
+                console.log(req.session);
+            });
+        // }
+        return req.session.user
+    },
 };
 
 export const projectMutations = {
-    createProject: async (_, { ownerId, title }) => {
-        const project = new Project({ ownerId, title });
+    createProject: async (_, { ownerId }) => {
+        const project = new Project({ ownerId, title: "New project" });
         await project.save();
         return project
     }
 };
+
+// pierreportal.mac@gmail.com

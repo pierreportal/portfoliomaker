@@ -11,6 +11,6 @@ export const Tips: React.FunctionComponent<ITipsProps> = ({ message, close, clic
 
     return <Tip onClick={clickCallback}>
         {message}
-        <div onClick={close}>close</div>
+        <div onClick={close}>Got it</div>
         </Tip>
 }

@@ -16,7 +16,7 @@
         "isDraggable": true
     },
     "mainCustomStyles": {
-        "backgroundColor": "#ffa9a9"
+        "backgroundColor": "#fff"
     },
     "mainLayoutComponents": [
         {

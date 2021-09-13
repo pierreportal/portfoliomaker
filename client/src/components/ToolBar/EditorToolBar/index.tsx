@@ -3,6 +3,7 @@ import { EditorToolBarColumn } from './styles';
 import { HoverToolTip } from '../../ActionUI/ToolTip'
 import { DiscreteToggleButton } from '../../ActionUI/Buttons'
 
+
 export const EditorToolBar: React.FunctionComponent = () => {
     return <EditorToolBarColumn margin={10}>
         <HoverToolTip content={"Add a heading"} position={'right'}>

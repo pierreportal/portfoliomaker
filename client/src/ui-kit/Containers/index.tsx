@@ -10,7 +10,6 @@ interface IFullPageSectionProps {
 export const FullPageSection = styled(Column)`
     background-color: ${(props: IFullPageSectionProps) => props.backgroundColor || '#eee'};
     color: ${(props: IFullPageSectionProps) => props.color || fontBlack};
-
     width: ${(props: IFullPageSectionProps) => props.portion ? 100 / props.portion + '%' :  '100%'};
     padding: 20px;
     border-radius: 10px;

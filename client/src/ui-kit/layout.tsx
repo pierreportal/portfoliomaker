@@ -18,6 +18,7 @@ export const Column = styled.div`
 `;
 
 export const Row = styled.div`
+    align-items: ${(props: IColumnStyleProps) => props.verticalAlign || 'none'};
     display: flex;
     flex-direction: row;
     & > *:not(:last-child) {
@@ -42,12 +43,16 @@ interface IMainCOntainerProps {
 
 export const MainContainer = styled.div`
     flex:1;
-    width: 90%;
-    padding: 10px;
-    border: dashed 2px ${ghostBlack};
+    width: 95%;
+    height: 100%;
+    border-radius: 3px;
+    // padding: 10px;
+    // border: dashed 2px ${ghostBlack};
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
     background-color: ${(props:IMainCOntainerProps) => props.backgroundColor || 'white'};
     overflow-y: scroll;
     color: ${fontBlack};
+    transform: translateY(-40px);
     & .react-grid-item {
         background-color: ${(props:IMainCOntainerProps) => props.backgroundColor || 'white'};
         transition: none

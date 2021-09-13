@@ -24,7 +24,7 @@ const schema = new Schema ({
     },
     title: {
         type: String,
-        required: true,
+        required: false,
         default: 'New project'
     },
     url: {
@@ -38,7 +38,7 @@ const schema = new Schema ({
     },
     routes: {
         type: [routesType],
-        required: true,
+        required: false,
         default: [
             {
                 label: 'Home',
@@ -49,12 +49,12 @@ const schema = new Schema ({
     gridConfigs: {
         type: gridConfigsType,
         default: defaultGridConfigs,
-        required: true
+        required: false
     },
     mainCustomStyles:{
         type: mainCustomStylesType,
         default: defaultmainCustomStyles,
-        required: true
+        required: false
     },
     mainLayoutComponents:{
         type: mongoose.ObjectId,
